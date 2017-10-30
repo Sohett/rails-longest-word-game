@@ -1,0 +1,16 @@
+<h1 style="text-align:center">Play</h1>
+
+<H3>Here is your grid</H3>
+<p> <%= @grid.join(" ") %> </p>
+
+
+<h2>Now give us your best shot!! The clock is ticking my friend</h2>
+<p> !!!!!!!  <%= @start_time %> !!!!!!!!! </p>
+
+<form action="/score" method="get">
+  <label for="question">Give us your best shot</label>
+  <input type="text" id="question" name="attempt" placeholder="undoubtedly">
+  <input type="hidden" name="grid" value= <%= @grid.join %> >
+  <input type="hidden" name="start_time" value= <%= @start_time %> >
+  <input type="submit" value="Your score!">
+</form>
