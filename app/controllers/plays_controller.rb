@@ -16,6 +16,7 @@ class PlaysController < ApplicationController
     session[:games] = [] unless session[:games]
     session[:games] << @results[:score]
     @past_games = session[:games]
+
   end
 
   def home
