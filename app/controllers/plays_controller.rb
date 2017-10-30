@@ -13,12 +13,16 @@ class PlaysController < ApplicationController
     @start_time = (params[:start_time]).to_datetime.to_i
     @grid = params[:grid].split('')
     @results = run_game(@attempt, @grid, @start_time, @end_time)
+    session[:games] = [] unless session[:games]
+    session[:games] << @results[:score]
+    @past_games = session[:games]
   end
 
   def home
   end
 end
 
+private
 
 def generate_grid(grid_size)
   grid = (0...grid_size).map { ('A'..'Z').to_a[rand(26)] }

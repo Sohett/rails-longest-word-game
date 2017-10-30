@@ -2,10 +2,20 @@
 
 
 <ul>
-<li> here is your score <%= @results[:score] %> </li>
-<li> You took <%= @results[:time] %> seconds</li>
-<li> <%= @results[:message] %> </li>
+  <li> here is your score <%= @results[:score] %> </li>
+  <li> You took <%= @results[:time] %> seconds</li>
+  <li> <%= @results[:message] %> </li>
 </ul>
 
 
 <%= link_to "Play the game again you looser ! ", game_path %>
+
+
+
+<h3>Past logs</h3>
+
+<lu>
+  <% @past_games.each do |results| %>
+  <li>  <%= results %> </li>
+  <% end %>
+</lu>
